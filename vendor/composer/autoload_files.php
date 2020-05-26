@@ -6,8 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'e4d1a45c10c1a2c66c8843a1b2fd0452' => $vendorDir . '/yurunsoft/guzzle-swoole/src/load_include.php',
-    '823fc2328a53533025b82f709f450da8' => $vendorDir . '/yurunsoft/guzzle-swoole/src/functions.php',
+    '87b11ef26361fca94c2d0028f69c4391' => $vendorDir . '/yurunsoft/guzzle-swoole/src/load_include.php',
+    'd3dc23e3d3202302f75a085b0cd3a819' => $vendorDir . '/yurunsoft/guzzle-swoole/src/functions.php',
     'ba66f41e40a9697abbd6ad188c225b53' => $vendorDir . '/swoft/stdlib/src/Helper/Functions.php',
     '320cde22f66dd4f5d3fd621d3e88b98f' => $vendorDir . '/symfony/polyfill-ctype/bootstrap.php',
     '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => $vendorDir . '/symfony/polyfill-mbstring/bootstrap.php',

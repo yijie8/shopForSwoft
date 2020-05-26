@@ -21,16 +21,16 @@ use function context;
  * Class HomeController
  * @Controller()
  */
-class HomeController
+class HomeController extends BaseController
 {
   /**
    * @RequestMapping("/")
    * @throws Throwable
    */
-  public function index(): Response
+  public function index()
   {
-    return context()->getResponse()->withContent("22222222");
-    return context()->getResponse()->withContent("111111111111");
+    return $this->response()->withContent("22222222");
+    // return response()->getResponse()->withContent("111111111111");
   }
 
   /**
@@ -42,6 +42,6 @@ class HomeController
    */
   public function hello(string $name): Response
   {
-    return context()->getResponse()->withContent('Hello' . ($name === '' ? '' : ", {$name}"));
+    return $this->response()->withContent('Hello' . ($name === '' ? '' : ", {$name}"));
   }
 }

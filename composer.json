@@ -40,7 +40,8 @@
     "yijie/easytbk": "^1.0",
     "hanson/open-taobao-sdk": "dev-master",
     "firebase/php-jwt": "^5.0",
-    "yurunsoft/guzzle-swoole": "^2.1"
+    "yurunsoft/guzzle-swoole": "^2.1",
+    "swoft/session": "^2.0"
   },
   "require-dev": {
     "swoft/swoole-ide-helper": "dev-master",

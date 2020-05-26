@@ -33,6 +33,12 @@ return [
     ],
     /* @see HttpServer::$setting */
     'setting' => [
+      // 配置静态文件处理
+      'enable_static_handler'    => true,
+      // swoole v4.4.0以下版本, 此处必须为绝对路径
+      'document_root'            => dirname(__DIR__) . '/public',
+
+
       //      'task_worker_num' => 12,
       'task_worker_num' => 1,
       'task_enable_coroutine' => true,
@@ -43,27 +49,51 @@ return [
 
   ///home/yijie/go/other/src/github.com/george518/PPGo_ApiAdmin/db_tools/dev/_db
   'db' => [
-      'class'    => Swoft\Db\Database::class,
-      // 'dsn'      => 'mysql:dbname=crmeb;host=60.205.226.149:3306',
-      // 'username' => 'crmeb',
-      // 'password' => 'M0LtyK8v578irGxJ',
+    'class'    => Swoft\Db\Database::class,
+    // 'dsn'      => 'mysql:dbname=crmeb;host=60.205.226.149:3306',
+    // 'username' => 'crmeb',
+    // 'password' => 'M0LtyK8v578irGxJ',
 
-      'dsn'      => 'mysql:dbname=crmeb;host=127.0.0.1:4444',
-      'username' => 'root',
-      'password' => '123456',
+    'dsn'      => 'mysql:dbname=crmeb;host=127.0.0.1:4444',
+    'username' => 'root',
+    'password' => '123456',
 
-      'charset'  => 'utf8mb4',
-      'prefix'   => 'eb_',
-      'options'  => [
-        PDO::ATTR_CASE => PDO::CASE_NATURAL
-      ],
-      'config'   => [
-        'collation' => 'utf8mb4_unicode_ci',
-        'strict'    => true,
-        'timezone'  => '+8:00',
-        'modes'     => 'NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES',
-        'fetchMode' => PDO::FETCH_ASSOC
-      ]
+    'charset'  => 'utf8mb4',
+    'prefix'   => 'eb_',
+    'options'  => [
+      PDO::ATTR_CASE => PDO::CASE_NATURAL
     ],
+    'config'   => [
+      'collation' => 'utf8mb4_unicode_ci',
+      'strict'    => true,
+      'timezone'  => '+8:00',
+      'modes'     => 'NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES',
+      'fetchMode' => PDO::FETCH_ASSOC
+    ]
+  ],
+  'view' => [
+    // class 配置是可以省略的, 因为 view 组件里已经配置了它
+    // 'class' => \Swoft\View\Renderer::class,
+    'viewsPath' => dirname(__DIR__) . '/app/views/',
+  ],
+
+  'serverDispatcher' => [
+    'middlewares' => [
+      \Swoft\View\Middleware\ViewMiddleware::class,
+      \Swoft\Session\Middleware\SessionMiddleware::class,
+      //\Swoft\Devtool\Middleware\DevToolMiddleware::class,
+    ]
+  ],
+  'sessionManager' => [
+    'class' => \Swoft\Session\SessionManager::class,
+    'config' => [
+        'driver' => 'redis',
+        'name' => 'SWOFT_SESSION_ID',
+        'lifetime' => 1800,
+        'expire_on_close' => false,
+        'encrypt' => false,
+        'storage' => '@runtime/sessions',
+    ],
+  ],
 
 ];

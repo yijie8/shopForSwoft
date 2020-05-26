@@ -45,6 +45,7 @@ return array(
     'Swoft\\Log\\' => array($vendorDir . '/swoft/log/src'),
     'Swoft\\Limiter\\' => array($vendorDir . '/swoft/limiter/src'),
     'Swoft\\I18n\\' => array($vendorDir . '/swoft/i18n/src'),
+    'Swoft\\Http\\Session\\' => array($vendorDir . '/swoft/session/src'),
     'Swoft\\Http\\Server\\' => array($vendorDir . '/swoft/http-server/src'),
     'Swoft\\Http\\Message\\' => array($vendorDir . '/swoft/http-message/src'),
     'Swoft\\Event\\' => array($vendorDir . '/swoft/event/src'),

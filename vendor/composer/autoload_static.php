@@ -7,8 +7,8 @@ namespace Composer\Autoload;
 class ComposerStaticInit02fafa7f76e95934895d9989e6fcf5c1
 {
     public static $files = array (
-        'e4d1a45c10c1a2c66c8843a1b2fd0452' => __DIR__ . '/..' . '/yurunsoft/guzzle-swoole/src/load_include.php',
-        '823fc2328a53533025b82f709f450da8' => __DIR__ . '/..' . '/yurunsoft/guzzle-swoole/src/functions.php',
+        '87b11ef26361fca94c2d0028f69c4391' => __DIR__ . '/..' . '/yurunsoft/guzzle-swoole/src/load_include.php',
+        'd3dc23e3d3202302f75a085b0cd3a819' => __DIR__ . '/..' . '/yurunsoft/guzzle-swoole/src/functions.php',
         'ba66f41e40a9697abbd6ad188c225b53' => __DIR__ . '/..' . '/swoft/stdlib/src/Helper/Functions.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -87,6 +87,7 @@ class ComposerStaticInit02fafa7f76e95934895d9989e6fcf5c1
             'Swoft\\Log\\' => 10,
             'Swoft\\Limiter\\' => 14,
             'Swoft\\I18n\\' => 11,
+            'Swoft\\Http\\Session\\' => 19,
             'Swoft\\Http\\Server\\' => 18,
             'Swoft\\Http\\Message\\' => 19,
             'Swoft\\Event\\' => 12,
@@ -342,6 +343,10 @@ class ComposerStaticInit02fafa7f76e95934895d9989e6fcf5c1
         'Swoft\\I18n\\' => 
         array (
             0 => __DIR__ . '/..' . '/swoft/i18n/src',
+        ),
+        'Swoft\\Http\\Session\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/swoft/session/src',
         ),
         'Swoft\\Http\\Server\\' => 
         array (

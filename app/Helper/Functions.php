@@ -3,6 +3,9 @@
 use Swlib\SaberGM;
 use Swoft\Http\Message\Response;
 use Swoft\Stdlib\Helper\ArrayHelper;
+use Swoft\Context\Context;
+use Swoft\Http\Message\Request;
+use Swoft\Http\Server\HttpContext;
 
 /**
  * 对象转数组
@@ -113,13 +116,13 @@ function str_ends_with(string $haystack, string $needles)
  * @param          $msg　输出的内容
  * @return Response
  */
-//function dump(Response $response, $msg): Response
-//{
+// function dump(Response $response, $msg): Response
+// {
 //  $response = $response->withContent("<pre>");
 //  $response = $response->withContent(print_r($msg, 1));
 //  $response = $response->withContentType(ContentType::HTML);
 //  return $response;
-//}
+// }
 
 /**
  * 返回给定值的默认值。
@@ -130,4 +133,23 @@ function str_ends_with(string $haystack, string $needles)
 function value_($value)
 {
   return $value instanceof Closure ? $value() : $value;
+}
+
+
+/**
+ * @return HttpContext|Response
+ */
+function response()
+{
+  $r = Context::get(true);
+  return $r instanceof HttpContext ? $r->getResponse() : context()->getResponse();
+}
+
+/**
+ * @return HttpContext|Request
+ */
+function request()
+{
+  $r = Context::get(true);
+  return $r instanceof HttpContext ? $r->getRequest() : context()->getRequest();
 }
