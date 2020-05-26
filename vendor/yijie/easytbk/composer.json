@@ -1,0 +1,51 @@
+{
+  "name": "yijie/easytbk",
+  "type": "library",
+  "description": "swoft tbsdk",
+  "keywords": [
+    "sdk",
+    "php",
+    "swoole",
+    "swoft"
+  ],
+  "homepage": "https://github.com/yijie8/easytbk",
+  "license": "MIT",
+  "version": "v1.0.2",
+  "authors": [
+    {
+      "name": "yijie",
+      "email": "77780886@qq.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "illuminate/support": "~5.0|~6.0",
+    "graham-campbell/manager": "^2.0|^3.0|^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Yijie\\EasyTBK\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Yijie\\EasyTBK\\ServiceProvider"
+      ]
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.5"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SwoftTest\\Annotation\\Unit\\": "test/unit/",
+      "SwoftTest\\Annotation\\Testing\\": "test/testing/"
+    }
+  },
+  "repositories": {
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit -c phpunit.xml"
+  }
+}
